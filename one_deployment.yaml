@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: networkchuckcoffee-deployment
+  name: grafana-deployment
   labels:
-    app: nccoffee
+    app: grafana
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nccoffee
+      app: grafana
   template:
     metadata:
       labels:
-        app: nccoffee
+        app: grafana
     spec:
       containers:
-      - name: nccoffee
-        image: thenetworkchuck/nccoffee:pourover
+      - name: grafana
+        image: grafana/grafana:main-ubuntu
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 3000

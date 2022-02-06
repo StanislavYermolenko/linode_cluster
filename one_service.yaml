@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: coffee-service
+  name: grafana
   annotations:
     service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
   labels:
@@ -10,9 +10,9 @@ spec:
   type: LoadBalancer
   ports:
   - name: http
-    port: 80
+    port: 3000
     protocol: TCP
-    targetPort: 80
+    targetPort: 3000
   selector:
-    app: nccoffee
+    app: grafana
   sessionAffinity: None
