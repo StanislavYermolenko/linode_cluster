@@ -5,7 +5,7 @@ metadata:
   annotations:
     service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
   labels:
-    app: coffee-service
+    app: grafana-service
 spec:
   type: LoadBalancer
   ports:
